@@ -7,48 +7,49 @@ namespace _01._Data_Type_Finder
         static void Main(string[] args)
         {
 
-            while (true)
+            string input = Console.ReadLine();
+
+            string dataType = string.Empty;
+
+            while (input != "END")
             {
-                var input = Console.ReadLine();
-                string dataType = "";
-                if (input == "END")
-                {
-                    break;
-                }
                 try
                 {
-                    int number = int.Parse(input);
+                    int value = int.Parse(input);
                     dataType = "integer";
                 }
-                catch (FormatException)
+                catch (Exception)
                 {
                     try
                     {
-                        double number = double.Parse(input);
+                        float value = float.Parse(input);
                         dataType = "floating point";
                     }
-                    catch (FormatException)
+                    catch (Exception)
                     {
                         try
                         {
-                            char number = char.Parse(input);
+                            char value = char.Parse(input);
                             dataType = "character";
                         }
-                        catch (FormatException)
+                        catch (Exception)
                         {
                             try
                             {
-                                bool number = bool.Parse(input);
+                                bool value = bool.Parse(input);
                                 dataType = "boolean";
                             }
-                            catch (FormatException)
+                            catch (Exception)
                             {
+
                                 dataType = "string";
                             }
                         }
                     }
                 }
                 Console.WriteLine($"{input} is {dataType} type");
+
+                input = Console.ReadLine();
             }
 
             //string input = Console.ReadLine();
