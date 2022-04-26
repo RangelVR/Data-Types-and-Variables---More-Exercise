@@ -8,9 +8,6 @@ namespace _02._From_Left_to_The_Right
         {
             int n = int.Parse(Console.ReadLine());
 
-            
-
-
             for (int i = 0; i < n; i++)
             {
 
