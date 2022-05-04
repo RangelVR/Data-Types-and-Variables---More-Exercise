@@ -17,7 +17,7 @@ namespace _05._Decrypting_Message
                 decriptedMessage += decryptedChar;
             }
 
-            Console.WriteLine(decriptedMessage);
+            Console.WriteLine(decryptedMessage);
         }
     }
 }
