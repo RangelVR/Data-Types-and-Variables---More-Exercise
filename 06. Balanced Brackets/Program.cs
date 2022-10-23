@@ -7,27 +7,36 @@ namespace Demo
         static void Main(string[] args)
         {
             int n = int.Parse(Console.ReadLine());
-            int countOpen = 0;
-            int countClose = 0;
+            int counter1 = 0;
+            int counter2 = 0;
 
             for (int i = 0; i < n; i++)
             {
                 string ch = Console.ReadLine();
-                if (ch == "(")
+                if (ch == ")")
                 {
-                    countOpen++;
+                    Console.WriteLine("UNBALANCED");
+                    return;
                 }
-                else if (ch == ")")
+                else if (ch == "(")
                 {
-                    countClose++;
-                    if (countOpen - countClose != 0)
+                    counter1++;
+                    for (int j = i + 1; j < n; j++)
                     {
-                        Console.WriteLine("UNBALANCED");
-                        return;
+                        ch = Console.ReadLine();
+                        if (ch == ")")
+                        {
+                            counter2++;
+                        }
+                        else if (ch == "(")
+                        {
+                            counter1++;
+                        }
                     }
-                }               
+                    break;
+                }
             }
-            if (countOpen == countClose)
+            if (counter1 == counter2)
             {
                 Console.WriteLine("BALANCED");
             }
