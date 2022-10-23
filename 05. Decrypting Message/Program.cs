@@ -8,7 +8,7 @@ namespace Demo
         {
             int key = int.Parse(Console.ReadLine());
             int countLetters = int.Parse(Console.ReadLine());
-            string decodedWord = string.Empty;
+            string decodedMessage = string.Empty;
 
             for (int i = 0; i < countLetters; i++)
             {
