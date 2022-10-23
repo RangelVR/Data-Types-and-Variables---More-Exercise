@@ -1,37 +1,33 @@
-﻿using System;
+using System;
 
-namespace _06._Balanced_Brackets
+namespace Demo
 {
     class Program
     {
         static void Main(string[] args)
         {
-            int numOfLines = int.Parse(Console.ReadLine());
-            
-            int openCounter = 0;
-            int closeCounter = 0;
+            int n = int.Parse(Console.ReadLine());
+            int countOpen = 0;
+            int countClose = 0;
 
-            for (int i = 0; i < numOfLines; i++)
+            for (int i = 0; i < n; i++)
             {
-                string input = Console.ReadLine();
-
-                if (input == "(")
+                string ch = Console.ReadLine();
+                if (ch == "(")
                 {
-                    openCounter++;
+                    countOpen++;
                 }
-                else if (input == ")")
+                else if (ch == ")")
                 {
-                    closeCounter++;
-                    if (openCounter - closeCounter != 0)
+                    countClose++;
+                    if (countOpen - countClose != 0)
                     {
                         Console.WriteLine("UNBALANCED");
                         return;
                     }
-                }
-
+                }               
             }
-
-            if (openCounter == closeCounter)
+            if (countOpen == countClose)
             {
                 Console.WriteLine("BALANCED");
             }
@@ -39,9 +35,6 @@ namespace _06._Balanced_Brackets
             {
                 Console.WriteLine("UNBALANCED");
             }
-
-
-            
         }
     }
 }
