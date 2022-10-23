@@ -1,6 +1,6 @@
-﻿using System;
+using System;
 
-namespace _02._From_Left_to_The_Right
+namespace Demo
 {
     class Program
     {
@@ -8,63 +8,62 @@ namespace _02._From_Left_to_The_Right
         {
             int n = int.Parse(Console.ReadLine());
 
-            for (int i = 0; i < n; i++)
+            for (int t = 0; t < n; t++)
             {
+                string num1 = string.Empty;
+                string num2 = string.Empty;
+                long rightNum = 0;
+                long leftNum = 0;
+                long biggestNum = 0;
 
-                string rightNum = string.Empty;
-                string leftNum = string.Empty;
-                long rightPars;
-                long leftPars;
-                long rightSum = 0;
-                long leftSum = 0;
+                string input = Console.ReadLine();
 
-                string twoNumbers = Console.ReadLine();
-
-                for (int j = 0; j <= twoNumbers.Length-1; j++)
+                for (int i = 0; i < input.Length; i++)
                 {
-                    if (twoNumbers[j] != ' ')
+                    char ch = input[i];
+                    if (ch != ' ')
                     {
-                        rightNum += twoNumbers[j];
+                        num1 += ch;
                     }
-                    else if (twoNumbers[j] == ' ')
+                    else if(ch == ' ')
                     {
-                        for (int k = j + 1; k <= twoNumbers.Length -1; k++)
+                        for (int k = i + 1; k < input.Length; k++)
                         {
-                            leftNum += twoNumbers[k];
+                            char ch2 = input[k];
+                            num2 += ch2;
                         }
                         break;
                     }
                 }
+                rightNum = long.Parse(num1);
+                leftNum = long.Parse(num2);
 
-                rightPars = long.Parse(rightNum);
-                leftPars = long.Parse(leftNum);
+                if (rightNum > leftNum)
+                {
 
-                if (leftPars > rightPars)
-                {
-                    for (int f = 0; f <= leftNum.Length - 1; f++)
+                    for (int i = 0; i < num1.Length; i++)
                     {
-                        if (leftNum[f] != '-')
+                        if (num1[i] != '-')
                         {
-                            leftSum += leftNum[f] - '0';
-                        }
-                         
-                    }
-                    Console.WriteLine(leftSum);
-                }
-                else if (leftPars <= rightPars)
-                {
-                    for (int f = 0; f <= rightNum.Length - 1; f++)
-                    {
-                        if (rightNum[f] != '-')
-                        {
-                            rightSum += rightNum[f] - '0';
+                            biggestNum += num1[i] - '0';
                         }
                         
                     }
-                    Console.WriteLine(rightSum);
                 }
-                
+                else
+                {
+                    for (int i = 0; i < num2.Length; i++)
+                    {
+                        if (num2[i] != '-')
+                        {
+                            biggestNum += num2[i] - '0';
+                        }
+                    }
+                }
+                Console.WriteLine(biggestNum);
+
             }
+
         }
     }
 }
