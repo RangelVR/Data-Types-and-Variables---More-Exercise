@@ -47,3 +47,51 @@ namespace Demo
         }
     }
 }
+
+-Въпреки, че това решение се дъни на този вход, то в Judge минава 100/100:
+11
+(
+5 + 10
+)
+* 
+(
+2 +
+(
+5
+)
+-12
+)
+
+            //int numOfLines = int.Parse(Console.ReadLine());
+            
+            //int openCounter = 0;
+            //int closeCounter = 0;
+
+            //for (int i = 0; i < numOfLines; i++)
+            //{
+            //    string input = Console.ReadLine();
+
+            //    if (input == "(")
+            //    {
+            //        openCounter++;
+            //    }
+            //    else if (input == ")")
+            //    {
+            //        closeCounter++;
+            //        if (openCounter - closeCounter != 0)
+            //        {
+            //            Console.WriteLine("UNBALANCED");
+            //            return;
+            //        }
+            //    }
+
+            //}
+
+            //if (openCounter == closeCounter)
+            //{
+            //    Console.WriteLine("BALANCED");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("UNBALANCED");
+            //}
