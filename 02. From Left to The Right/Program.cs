@@ -40,14 +40,12 @@ namespace Demo
 
                 if (rightNum > leftNum)
                 {
-
                     for (int i = 0; i < num1.Length; i++)
                     {
                         if (num1[i] != '-')
                         {
                             biggestNum += num1[i] - '0';
-                        }
-                        
+                        }                        
                     }
                 }
                 else
@@ -61,7 +59,6 @@ namespace Demo
                     }
                 }
                 Console.WriteLine(biggestNum);
-
             }
 
         }
