@@ -1,23 +1,21 @@
-﻿using System;
+using System;
 
-namespace _05._Decrypting_Message
+namespace Demo
 {
     class Program
     {
         static void Main(string[] args)
         {
             int key = int.Parse(Console.ReadLine());
-            int nChars = int.Parse(Console.ReadLine());
-            string decriptedMessage = string.Empty;
+            int countLetters = int.Parse(Console.ReadLine());
+            string decodedWord = string.Empty;
 
-            for (int i = 0; i < nChars; i++)
+            for (int i = 0; i < countLetters; i++)
             {
-                char ch = char.Parse(Console.ReadLine());
-                char decryptedChar = (char)(ch + key);
-                decriptedMessage += decryptedChar;
+                char letter = char.Parse(Console.ReadLine());
+                decodedWord += (char)(letter + key);
             }
-
-            Console.WriteLine(decryptedMessage);
+            Console.WriteLine(decodedWord);
         }
     }
 }
