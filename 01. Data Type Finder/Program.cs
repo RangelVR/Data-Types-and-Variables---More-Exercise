@@ -16,14 +16,14 @@ while (input != "END")
 	}
 	else if (bool.TryParse(input, out bool boolen))
 	{
-        Console.WriteLine($"{input} is boolean type");
-    }
-    else
+                Console.WriteLine($"{input} is boolean type");
+        }
+        else
 	{
-        Console.WriteLine($"{input} is string type");
-    }
+                Console.WriteLine($"{input} is string type");
+        }
 
-    input = Console.ReadLine();
+        input = Console.ReadLine();
 }
 
 --------------------------------------------------------------------------
