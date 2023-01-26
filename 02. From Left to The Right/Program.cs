@@ -1,66 +1,53 @@
-using System;
+int n = int.Parse(Console.ReadLine());
 
-namespace Demo
+
+while (n > 0)
 {
-    class Program
+    string numbers = Console.ReadLine();
+
+    long sumRight = 0;
+    long sumLeft = 0;
+    string rightNum = string.Empty;
+    string leftNum = string.Empty;
+
+    for (int i = 0; i < numbers.Length; i++)
     {
-        static void Main(string[] args)
+        rightNum += (char)numbers[i];
+
+        if (numbers[i] == ' ')
         {
-            int n = int.Parse(Console.ReadLine());
-
-            for (int t = 0; t < n; t++)
+            for (int k = i + 1; k < numbers.Length; k++)
             {
-                string num1 = string.Empty;
-                string num2 = string.Empty;
-                long rightNum = 0;
-                long leftNum = 0;
-                long biggestNum = 0;
-
-                string input = Console.ReadLine();
-
-                for (int i = 0; i < input.Length; i++)
-                {
-                    char ch = input[i];
-                    if (ch != ' ')
-                    {
-                        num1 += ch;
-                    }
-                    else if(ch == ' ')
-                    {
-                        for (int k = i + 1; k < input.Length; k++)
-                        {
-                            char ch2 = input[k];
-                            num2 += ch2;
-                        }
-                        break;
-                    }
-                }
-                rightNum = long.Parse(num1);
-                leftNum = long.Parse(num2);
-
-                if (rightNum > leftNum)
-                {
-                    for (int i = 0; i < num1.Length; i++)
-                    {
-                        if (num1[i] != '-')
-                        {
-                            biggestNum += num1[i] - '0';
-                        }                        
-                    }
-                }
-                else
-                {
-                    for (int i = 0; i < num2.Length; i++)
-                    {
-                        if (num2[i] != '-')
-                        {
-                            biggestNum += num2[i] - '0';
-                        }
-                    }
-                }
-                Console.WriteLine(biggestNum);
+                leftNum += (char)numbers[k];
             }
-
+            break;
         }
     }
+
+    long right = long.Parse(rightNum);
+    long left = long.Parse(leftNum);
+
+    if (right > left)
+    {
+        right = Math.Abs(right);
+
+        while (right > 0)
+        {
+            sumRight += right % 10;
+            right /= 10;
+        }
+        Console.WriteLine(sumRight);
+    }
+    else
+    {
+        left = Math.Abs(left);
+        while (left > 0)
+        {
+            sumLeft += left % 10;
+            left /= 10;
+        }
+        Console.WriteLine(sumLeft);
+    }
+
+    n--;
 }
