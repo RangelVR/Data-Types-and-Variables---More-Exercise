@@ -1,21 +1,15 @@
-using System;
+int key = int.Parse(Console.ReadLine());
+int lines = int.Parse(Console.ReadLine());
 
-namespace Demo
+string message = string.Empty;
+
+while (lines > 0)
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            int key = int.Parse(Console.ReadLine());
-            int countLetters = int.Parse(Console.ReadLine());
-            string decodedMessage = string.Empty;
+    char letter = char.Parse(Console.ReadLine());
+    
+    message += (char)(letter + key);
 
-            for (int i = 0; i < countLetters; i++)
-            {
-                char letter = char.Parse(Console.ReadLine());
-                decodedWord += (char)(letter + key);
-            }
-            Console.WriteLine(decodedWord);
-        }
-    }
+    lines--;
 }
+
+Console.WriteLine(message);
