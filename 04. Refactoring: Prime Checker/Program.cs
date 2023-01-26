@@ -1,27 +1,16 @@
-﻿using System;
+int stopNum = int.Parse(Console.ReadLine());
 
-namespace _04._Refactoring_Prime_Checker
+for (int startNum = 2; startNum <= stopNum; startNum++)
 {
-    class Program
+    string isPrime = "true";
+
+    for (int currNum = 2; currNum < startNum; currNum++)
     {
-        static void Main(string[] args)
+        if (startNum % currNum == 0)
         {
-            int stopNum = int.Parse(Console.ReadLine());
-
-            for (int currNum = 2; currNum <= stopNum; currNum++)
-            {
-                string prime = "true";
-                for (int startNum = 2; startNum < currNum; startNum++)
-                {
-                    if (currNum % startNum == 0)
-                    {
-                        prime = "false";
-                        break;
-                    }
-                }
-                Console.WriteLine($"{currNum} -> {prime}");
-            }
-
+            isPrime = "false";
+            break;
         }
     }
+    Console.WriteLine("{0} -> {1}", startNum, isPrime);
 }
