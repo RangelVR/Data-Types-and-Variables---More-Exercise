@@ -1,26 +1,29 @@
-﻿using System;
-using System.Numerics;
+double a = double.Parse(Console.ReadLine());
+double b = double.Parse(Console.ReadLine());
+bool isEqual = false;
 
-namespace _03._Floating_Equality
+if (Math.Abs(a - b) >= 0.000001)
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-             
-            decimal EPS =  0.000001m;
-
-            decimal a = decimal.Parse(Console.ReadLine());
-            decimal b = decimal.Parse(Console.ReadLine());
-
-            if ((Math.Abs(a - b)) < EPS)
-            {
-                Console.WriteLine(true);
-            }
-            else
-            {
-                Console.WriteLine(false);
-            }
-        }
-    }
+    isEqual = false;
 }
+else
+{
+    isEqual = true;
+}
+
+Console.WriteLine(isEqual);
+
+--------------------------------------------------------
+//double EPS = 0.000001;
+
+//double a = double.Parse(Console.ReadLine());
+//double b = double.Parse(Console.ReadLine());
+
+//if ((Math.Abs(a - b)) < EPS)
+//{
+//    Console.WriteLine(true);
+//}
+//else
+//{
+//    Console.WriteLine(false);
+//}
